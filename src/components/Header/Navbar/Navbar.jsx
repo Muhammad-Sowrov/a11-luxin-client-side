@@ -69,7 +69,7 @@ const Navbar = () => {
               isPending ? "pending" : isActive ? "text-red-500" : ""
             }
           >
-            <a className="btn btn-ghost normal-case text-xl font-mono">LuxInn</a>
+            <p className="btn btn-ghost normal-case text-xl font-mono">LuxInn</p>
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
