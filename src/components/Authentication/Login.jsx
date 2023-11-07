@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../firebase/AuthProvider";
 
 const Login = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -18,7 +20,7 @@ const Login = () => {
           console.log(result.user);
 
           // after log
-          //   navigate(location?.state ? location.state : '/')
+            navigate(location?.state ? location.state : '/')
         })
         // eslint-disable-next-line no-unused-vars
         .catch((error) => {
