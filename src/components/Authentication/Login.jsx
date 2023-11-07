@@ -1,14 +1,44 @@
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../firebase/AuthProvider";
 
 const Login = () => {
-    const handleLogin = e => {
-        e.preventDefault()
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        const loggedUserInfo = {email, password};
-        console.log(loggedUserInfo);
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [google, setGoogle] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if ((email, password)) {
+      setError("");
+      signIn(email, password)
+        .then((result) => {
+          console.log(result.user);
+
+          // after log
+          //   navigate(location?.state ? location.state : '/')
+        })
+        // eslint-disable-next-line no-unused-vars
+        .catch((error) => {
+          setError(
+            "Invalid Email or Password. Please use a valid Email and Password"
+          );
+        });
     }
+  };
+
+
+  const handleGoogle = () => {
+    signInWithGoogle()
+    .then(result => {
+      setGoogle(result.user);
+    })
+    .catch(error => {
+      console.log(error.message);
+    })
+  }
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center bg-gray-200">
@@ -22,6 +52,7 @@ const Login = () => {
                 Email
               </label>
               <input
+                onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 name="email"
                 className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-green-500"
@@ -33,18 +64,21 @@ const Login = () => {
                 Password
               </label>
               <input
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 name="password"
                 className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-green-500"
                 placeholder="Password"
               />
             </div>
+            <p className="text-red-400">{error}</p>
             <div className="mb-6">
               <label className="block text-gray-600 text-sm font-semibold">
                 <input type="checkbox" className="mr-2" /> Remember me
               </label>
             </div>
             <button
+              onClick={handleLogin}
               type="submit"
               className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold p-2 rounded focus:outline-none focus:bg-green-600"
             >
@@ -63,7 +97,7 @@ const Login = () => {
             </p>
           </div>
           <div className="mt-6 text-center">
-            <button className="bg-white hover:bg-gray-200 text-gray-800 md:rounded-lg font-semibold p-2 rounded border border-gray-300 focus:outline-none">
+            <button onClick={handleGoogle} className="bg-white hover:bg-gray-200 text-gray-800 md:rounded-lg font-semibold p-2 rounded border border-gray-300 focus:outline-none">
               Log in with Google
             </button>
           </div>
