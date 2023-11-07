@@ -5,6 +5,7 @@ import Room from "../Pages/Room/Room";
 import MyRooms from "../Pages/MyRooms.jsx/MyRooms";
 import Login from "../components/Authentication/Login";
 import Register from "../components/Authentication/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const Route = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const Route = createBrowserRouter([
       },
       {
         path: "/myRooms",
-        element: <MyRooms></MyRooms>,
+        element: <PrivateRoute><MyRooms></MyRooms></PrivateRoute>,
       },
       {
         path: "/login",
