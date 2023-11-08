@@ -28,6 +28,9 @@ const Hotel = ({ hotel }) => {
           <p className="text-center top-8 left-8 font-bold absolute">
             {roomName}
           </p>
+          <p className="text-center top-12 left-8 font-bold absolute">
+            Rating: {rating}/5
+          </p>
         </div>
       </Link>
     </div>
