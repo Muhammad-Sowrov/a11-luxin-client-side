@@ -6,12 +6,14 @@ import MyRooms from "../Pages/MyRooms.jsx/MyRooms";
 import Login from "../components/Authentication/Login";
 import Register from "../components/Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../Pages/Error/Error";
+import Details from "../Pages/Room/Details";
 
 const Route = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    // errorElement: ,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -33,6 +35,11 @@ const Route = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/details/:id",
+        element: <Details></Details>,
+        loader: ({params})=>fetch(`http://localhost:5000/hotels/${params.id}`)
       },
     ],
   },

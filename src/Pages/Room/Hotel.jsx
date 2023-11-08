@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 
 const Hotel = ({ hotel }) => {
   const {
@@ -15,7 +16,7 @@ const Hotel = ({ hotel }) => {
   } = hotel;
   return (
     <div>
-      <NavLink to="/_id">
+      <Link to={`/details/${_id}`}>
         <div className="card -96 bg-base-100 shadow-xl px-5 py-5 relative">
           <figure className="flex items-center justify-center">
             <img
@@ -28,7 +29,7 @@ const Hotel = ({ hotel }) => {
             {roomName}
           </p>
         </div>
-      </NavLink>
+      </Link>
     </div>
   );
 };
