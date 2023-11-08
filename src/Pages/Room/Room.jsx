@@ -6,7 +6,7 @@ const Room = () => {
     const hotels = useLoaderData();
     console.log(hotels);
     return (
-        <div>
+        <div className="container mx-auto">
             <h4 className="text-center text-3xl">Available Rooms</h4>
             <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {

@@ -43,6 +43,26 @@ const Navbar = () => {
           My Rooms
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/faq"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-red-500 font-bold" : ""
+          }
+        >
+          FAQ
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/about"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-red-500 font-bold" : ""
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
     </>
   );
   return (

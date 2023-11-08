@@ -8,6 +8,8 @@ import Register from "../components/Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../Pages/Error/Error";
 import Details from "../Pages/Room/Details";
+import About from "../Pages/About/About";
+import Faq from "../Pages/Faq/Faq";
 
 const Route = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const Route = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/faq",
+        element: <Faq></Faq>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/register",
