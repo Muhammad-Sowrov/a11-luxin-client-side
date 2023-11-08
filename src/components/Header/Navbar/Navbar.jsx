@@ -91,7 +91,7 @@ const Navbar = () => {
           {
             user?.email? <NavLink
             onClick={handleOut}
-            to="/login"
+            to="/"
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "text-red-500 font-bold" : ""
             }

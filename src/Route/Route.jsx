@@ -11,6 +11,7 @@ const Route = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    // errorElement: ,
     children: [
       {
         path: "/",
@@ -19,6 +20,7 @@ const Route = createBrowserRouter([
       {
         path: "/rooms",
         element: <Room></Room>,
+        loader: ()=> fetch('http://localhost:5000/hotels')
       },
       {
         path: "/myRooms",
