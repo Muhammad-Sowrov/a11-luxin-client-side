@@ -28,7 +28,7 @@ const Route = createBrowserRouter([
       },
       {
         path: "/myRooms",
-        element: <PrivateRoute><MyRooms></MyRooms></PrivateRoute>,
+        element: <PrivateRoute><MyRooms></MyRooms></PrivateRoute>
       },
       {
         path: "/login",
