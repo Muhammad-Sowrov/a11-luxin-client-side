@@ -2,7 +2,7 @@
 
 const About = () => {
     return (
-        <div className="h-[80vh]">
+        <div className="lg:h-[80vh]">
             
         </div>
     );
