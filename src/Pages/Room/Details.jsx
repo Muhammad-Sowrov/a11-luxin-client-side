@@ -39,12 +39,12 @@ const Details = () => {
     console.log(bookingData);
 
 
-    // axios.post('http://localhost:5000/bookings', bookingData)
+    // axios.post('https://lux-inn-server.vercel.app/bookings', bookingData)
     // .then(data => {
     //   console.log(data.data);
     // })
 
-    fetch('http://localhost:5000/bookings', {
+    fetch('https://lux-inn-server.vercel.app/bookings', {
       method: 'POST',
       headers: {
         "content-type": "application/json"

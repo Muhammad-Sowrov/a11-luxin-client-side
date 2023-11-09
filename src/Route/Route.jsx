@@ -24,7 +24,7 @@ const Route = createBrowserRouter([
       {
         path: "/rooms",
         element: <Room></Room>,
-        loader: ()=> fetch('http://localhost:5000/hotels')
+        loader: ()=> fetch('https://lux-inn-server.vercel.app/hotels')
       },
       {
         path: "/myRooms",
@@ -49,7 +49,7 @@ const Route = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details></Details>,
-        loader: ({params})=>fetch(`http://localhost:5000/hotels/${params.id}`)
+        loader: ({params})=>fetch(`https://lux-inn-server.vercel.app/hotels/${params.id}`)
       },
     ],
   },
