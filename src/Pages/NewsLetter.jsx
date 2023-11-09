@@ -12,7 +12,7 @@ const NewsLetter = () => {
 
               <div className="mt-8">
                 <a href="" className="text-xl font-bold text-black">
-                  01*******
+                  01******0
                 </a>
 
                 <address className="mt-2 not-italic">
