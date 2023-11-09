@@ -24,7 +24,7 @@ const BookedRoom = ({ book }) => {
             <p className="py-2">
              Check Out: {checkOut}
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <button className="btn btn-primary">Delete</button>
           </div>
         </div>
       </div>
